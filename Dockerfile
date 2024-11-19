@@ -27,7 +27,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Copiar el script de Python y el archivo requirements.txt
-COPY src/main/resources/ConversorImagen.py ./ConversorImagen.py
+COPY src/main/resources/ConversorImagen.py /app/ConversorImagen.py
 COPY requirements.txt ./requirements.txt
 
 # Instalar las dependencias de Python

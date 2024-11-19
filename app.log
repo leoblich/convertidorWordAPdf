@@ -1459,3 +1459,140 @@ Consider the following:
 	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
 	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
 
+2024-11-19T17:20:54.415-03:00  INFO 1168 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Starting ConvertidorApplication using Java 22.0.2 with PID 1168 (C:\PROYECTO_PERCY\pruebaparadeployar\convertidor\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\pruebaparadeployar\convertidor)
+2024-11-19T17:20:54.420-03:00 DEBUG 1168 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-19T17:20:54.422-03:00  INFO 1168 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T17:20:56.834-03:00  INFO 1168 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-11-19T17:20:56.865-03:00  INFO 1168 --- [convertidor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T17:20:56.865-03:00  INFO 1168 --- [convertidor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T17:20:56.993-03:00  INFO 1168 --- [convertidor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T17:20:56.994-03:00  INFO 1168 --- [convertidor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2474 ms
+2024-11-19T17:20:57.634-03:00  INFO 1168 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2024-11-19T17:20:57.645-03:00  INFO 1168 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Started ConvertidorApplication in 4.342 seconds (process running for 5.222)
+2024-11-19T17:21:04.315-03:00  INFO 1168 --- [convertidor] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T17:21:04.316-03:00  INFO 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T17:21:04.316-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T17:21:04.411-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+2024-11-19T17:21:04.499-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: none
+2024-11-19T17:21:04.547-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T17:21:04.548-03:00  INFO 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 231 ms
+2024-11-19T17:21:04.565-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api", parameters={}
+2024-11-19T17:21:04.580-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to converidorWord_pdf.convertidor.Controller.DocumentsController#probandoConeccion()
+2024-11-19T17:21:04.599-03:00  INFO 1168 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de nivel INFO.
+2024-11-19T17:21:04.599-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de nivel DEBUG.
+2024-11-19T17:21:04.599-03:00 ERROR 1168 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de nivel ERROR.
+2024-11-19T17:21:04.599-03:00  INFO 1168 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de prueba.
+2024-11-19T17:21:04.610-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*]
+2024-11-19T17:21:04.612-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Conexión exitosa"]
+2024-11-19T17:21:04.623-03:00 DEBUG 1168 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T17:31:33.760-03:00  INFO 5108 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Starting ConvertidorApplication using Java 22.0.2 with PID 5108 (C:\PROYECTO_PERCY\pruebaparadeployar\convertidor\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\pruebaparadeployar\convertidor)
+2024-11-19T17:31:33.763-03:00 DEBUG 5108 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-19T17:31:33.765-03:00  INFO 5108 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T17:31:36.498-03:00  INFO 5108 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-11-19T17:31:36.528-03:00  INFO 5108 --- [convertidor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T17:31:36.529-03:00  INFO 5108 --- [convertidor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T17:31:36.682-03:00  INFO 5108 --- [convertidor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T17:31:36.682-03:00  INFO 5108 --- [convertidor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2796 ms
+2024-11-19T17:31:37.377-03:00  INFO 5108 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2024-11-19T17:31:37.395-03:00  INFO 5108 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Started ConvertidorApplication in 4.637 seconds (process running for 5.434)
+2024-11-19T17:31:40.150-03:00  INFO 5108 --- [convertidor] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T17:31:40.150-03:00  INFO 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T17:31:40.150-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T17:31:40.269-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+2024-11-19T17:31:40.358-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: none
+2024-11-19T17:31:40.415-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T17:31:40.415-03:00  INFO 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 265 ms
+2024-11-19T17:31:40.423-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api", parameters={}
+2024-11-19T17:31:40.447-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to converidorWord_pdf.convertidor.Controller.DocumentsController#probandoConeccion()
+2024-11-19T17:31:40.470-03:00  INFO 5108 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de nivel INFO.
+2024-11-19T17:31:40.471-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de nivel DEBUG.
+2024-11-19T17:31:40.471-03:00 ERROR 5108 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de nivel ERROR.
+2024-11-19T17:31:40.471-03:00  INFO 5108 --- [convertidor] [http-nio-8085-exec-1] c.c.Controller.DocumentsController       : Esto es un log de prueba.
+2024-11-19T17:31:40.487-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*]
+2024-11-19T17:31:40.488-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Conexión exitosa"]
+2024-11-19T17:31:40.503-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T17:32:54.091-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/document", parameters={multipart}
+2024-11-19T17:32:54.131-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to converidorWord_pdf.convertidor.Controller.DocumentsController#postDocument(MultipartFile)
+2024-11-19T17:32:54.458-03:00 ERROR 5108 --- [convertidor] [ForkJoinPool.commonPool-worker-3] c.convertidor.Service.DocumentsService   : Error en el script Python: python: can't open file 'C:\\PROYECTO_PERCY\\pruebaparadeployar\\convertidor\\classpath:ConversorImagen.py': [Errno 2] No such file or directory
+2024-11-19T17:32:54.469-03:00 ERROR 5108 --- [convertidor] [ForkJoinPool.commonPool-worker-1] c.convertidor.Service.DocumentsService   : El script Python terminó con un error. Código de salida: 2
+2024-11-19T17:32:54.473-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*]
+2024-11-19T17:32:54.474-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Ocurrió un error al guardar el documento: java.lang.RuntimeException: Error al ejecutar el script de (truncated)..."]
+2024-11-19T17:32:54.486-03:00 DEBUG 5108 --- [convertidor] [http-nio-8085-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T17:35:04.718-03:00  INFO 12100 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Starting ConvertidorApplication using Java 22.0.2 with PID 12100 (C:\PROYECTO_PERCY\pruebaparadeployar\convertidor\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\pruebaparadeployar\convertidor)
+2024-11-19T17:35:04.722-03:00 DEBUG 12100 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-19T17:35:04.723-03:00  INFO 12100 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T17:35:06.915-03:00  INFO 12100 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-11-19T17:35:06.946-03:00  INFO 12100 --- [convertidor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T17:35:06.946-03:00  INFO 12100 --- [convertidor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T17:35:07.087-03:00  INFO 12100 --- [convertidor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T17:35:07.088-03:00  INFO 12100 --- [convertidor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2261 ms
+2024-11-19T17:35:07.713-03:00  INFO 12100 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2024-11-19T17:35:07.724-03:00  INFO 12100 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Started ConvertidorApplication in 4.082 seconds (process running for 5.047)
+2024-11-19T17:35:10.462-03:00  INFO 12100 --- [convertidor] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T17:35:10.463-03:00  INFO 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T17:35:10.463-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T17:35:10.595-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+2024-11-19T17:35:10.785-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: none
+2024-11-19T17:35:10.831-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T17:35:10.832-03:00  INFO 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 369 ms
+2024-11-19T17:35:10.845-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/document", parameters={multipart}
+2024-11-19T17:35:10.928-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to converidorWord_pdf.convertidor.Controller.DocumentsController#postDocument(MultipartFile)
+2024-11-19T17:35:10.956-03:00  INFO 12100 --- [convertidor] [http-nio-8085-exec-1] c.convertidor.Service.DocumentsService   : entrando a llamado al script 
+2024-11-19T17:35:11.180-03:00 ERROR 12100 --- [convertidor] [ForkJoinPool.commonPool-worker-3] c.convertidor.Service.DocumentsService   : Error en el script Python: python: can't open file 'C:\\PROYECTO_PERCY\\pruebaparadeployar\\convertidor\\classpath:ConversorImagen.py': [Errno 2] No such file or directory
+2024-11-19T17:35:11.186-03:00 ERROR 12100 --- [convertidor] [ForkJoinPool.commonPool-worker-1] c.convertidor.Service.DocumentsService   : El script Python terminó con un error. Código de salida: 2
+2024-11-19T17:35:11.202-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*]
+2024-11-19T17:35:11.205-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Ocurrió un error al guardar el documento: java.lang.RuntimeException: Error al ejecutar el script de (truncated)..."]
+2024-11-19T17:35:11.217-03:00 DEBUG 12100 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T17:37:49.459-03:00  INFO 3088 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Starting ConvertidorApplication using Java 22.0.2 with PID 3088 (C:\PROYECTO_PERCY\pruebaparadeployar\convertidor\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\pruebaparadeployar\convertidor)
+2024-11-19T17:37:49.462-03:00 DEBUG 3088 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-19T17:37:49.464-03:00  INFO 3088 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T17:37:51.945-03:00  INFO 3088 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-11-19T17:37:51.973-03:00  INFO 3088 --- [convertidor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T17:37:51.974-03:00  INFO 3088 --- [convertidor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T17:37:52.110-03:00  INFO 3088 --- [convertidor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T17:37:52.111-03:00  INFO 3088 --- [convertidor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2515 ms
+2024-11-19T17:37:52.717-03:00  INFO 3088 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2024-11-19T17:37:52.729-03:00  INFO 3088 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Started ConvertidorApplication in 4.388 seconds (process running for 5.232)
+2024-11-19T17:37:56.928-03:00  INFO 3088 --- [convertidor] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T17:37:56.929-03:00  INFO 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T17:37:56.929-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T17:37:57.026-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+2024-11-19T17:37:57.161-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: none
+2024-11-19T17:37:57.208-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T17:37:57.209-03:00  INFO 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 280 ms
+2024-11-19T17:37:57.219-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/document", parameters={multipart}
+2024-11-19T17:37:57.278-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to converidorWord_pdf.convertidor.Controller.DocumentsController#postDocument(MultipartFile)
+2024-11-19T17:37:57.301-03:00  INFO 3088 --- [convertidor] [http-nio-8085-exec-1] c.convertidor.Service.DocumentsService   : entrando a llamado al script 
+2024-11-19T17:38:05.086-03:00 ERROR 3088 --- [convertidor] [ForkJoinPool.commonPool-worker-3] c.convertidor.Service.DocumentsService   : Error en el script Python: 
+2024-11-19T17:38:15.029-03:00  INFO 3088 --- [convertidor] [ForkJoinPool.commonPool-worker-2] c.convertidor.Service.DocumentsService   : Salida del script Python: Conversión completada con éxito a src\main\resources\PROGRAMACIÓN ANUAL - V CICLO_converted.pdf
+2024-11-19T17:38:15.030-03:00  INFO 3088 --- [convertidor] [ForkJoinPool.commonPool-worker-2] c.convertidor.Service.DocumentsService   : Salida del script Python: 14
+2024-11-19T17:38:15.030-03:00  INFO 3088 --- [convertidor] [ForkJoinPool.commonPool-worker-2] c.convertidor.Service.DocumentsService   : Salida del script Python: Primera página extraída con éxito a src\main\resources\PROGRAMACIÓN ANUAL - V CICLO_first_page.pdf.
+2024-11-19T17:38:15.031-03:00  INFO 3088 --- [convertidor] [ForkJoinPool.commonPool-worker-2] c.convertidor.Service.DocumentsService   : Salida del script Python: Archivo temporal src\main\resources\PROGRAMACIÓN ANUAL - V CICLO_converted.pdf eliminado con éxito.
+2024-11-19T17:38:15.122-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*]
+2024-11-19T17:38:15.124-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Documento guardado exitosamente."]
+2024-11-19T17:38:15.141-03:00 DEBUG 3088 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T17:41:00.911-03:00  INFO 3104 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Starting ConvertidorApplication using Java 22.0.2 with PID 3104 (C:\PROYECTO_PERCY\pruebaparadeployar\convertidor\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\pruebaparadeployar\convertidor)
+2024-11-19T17:41:00.914-03:00 DEBUG 3104 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-19T17:41:00.916-03:00  INFO 3104 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T17:41:02.971-03:00  INFO 3104 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-11-19T17:41:03.001-03:00  INFO 3104 --- [convertidor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T17:41:03.001-03:00  INFO 3104 --- [convertidor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T17:41:03.126-03:00  INFO 3104 --- [convertidor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T17:41:03.127-03:00  INFO 3104 --- [convertidor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2112 ms
+2024-11-19T17:41:03.740-03:00  INFO 3104 --- [convertidor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2024-11-19T17:41:03.750-03:00  INFO 3104 --- [convertidor] [main] c.convertidor.ConvertidorApplication     : Started ConvertidorApplication in 3.835 seconds (process running for 4.637)
+2024-11-19T17:41:16.212-03:00  INFO 3104 --- [convertidor] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T17:41:16.213-03:00  INFO 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T17:41:16.213-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T17:41:16.327-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+2024-11-19T17:41:16.479-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: none
+2024-11-19T17:41:16.531-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T17:41:16.531-03:00  INFO 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 318 ms
+2024-11-19T17:41:16.544-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/document", parameters={multipart}
+2024-11-19T17:41:16.612-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to converidorWord_pdf.convertidor.Controller.DocumentsController#postDocument(MultipartFile)
+2024-11-19T17:41:16.652-03:00  INFO 3104 --- [convertidor] [http-nio-8085-exec-1] c.convertidor.Service.DocumentsService   : entrando a llamado al script 
+2024-11-19T17:41:16.759-03:00 ERROR 3104 --- [convertidor] [ForkJoinPool.commonPool-worker-3] c.convertidor.Service.DocumentsService   : Error en el script Python: python: can't open file 'C:\\app\\ConversorImagen.py': [Errno 2] No such file or directory
+2024-11-19T17:41:16.765-03:00 ERROR 3104 --- [convertidor] [ForkJoinPool.commonPool-worker-1] c.convertidor.Service.DocumentsService   : El script Python terminó con un error. Código de salida: 2
+2024-11-19T17:41:16.784-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*]
+2024-11-19T17:41:16.785-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Ocurrió un error al guardar el documento: java.lang.RuntimeException: Error al ejecutar el script de (truncated)..."]
+2024-11-19T17:41:16.796-03:00 DEBUG 3104 --- [convertidor] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR

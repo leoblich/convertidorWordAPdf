@@ -177,7 +177,7 @@ public class DocumentsService {
     // Método para llamar al script de conversión en python
     private CompletableFuture<DocumentPdfCovertidoDto> llamadaScriptPythonConversion(byte[] file, String
             scriptPath, String outputFilePath, String baseName) throws IOException {
-
+logger.info("entrando a llamado al script ");
         return CompletableFuture.supplyAsync(() -> {
             DocumentPdfCovertidoDto respuestaConversion = new DocumentPdfCovertidoDto();
 
