@@ -4,6 +4,8 @@ import converidorWord_pdf.convertidor.Entity.Dto.DocumentDto;
 import converidorWord_pdf.convertidor.Entity.Dto.DocumentPdfCovertidoDto;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,12 +26,15 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class DocumentsService {
 
+
+    private static final Logger logger = LoggerFactory.getLogger(DocumentsService.class);
+
     public Object guardarDocument(MultipartFile file, File scriptResource) throws GeneralSecurityException, IOException {
 
         String nombreArchivo = baseNameFile(file);
 
         // valido el archivo
-        validarArchivo(file);
+//        validarArchivo(file);
 
         File tempFileGuargar = null;
         String outputFilePath = String.valueOf(scriptResource.getParentFile());
@@ -177,6 +182,7 @@ public class DocumentsService {
             DocumentPdfCovertidoDto respuestaConversion = new DocumentPdfCovertidoDto();
 
             if (file.length == 0) {
+                logger.error("El archivo Word es vacío.");
                 throw new RuntimeException("El archivo Word es vacío.");
             }
 
@@ -202,6 +208,7 @@ public class DocumentsService {
                         String line;
                         while ((line = reader.readLine()) != null) {
 //                            System.out.println("Salida del script: " + line);
+                            logger.info("Salida del script Python: " + line);  // Registra la salida estándar
 
                             // Verifica si la línea contiene solo un número (número de páginas)
                             if (line.matches("\\d+")) { // Este patrón verifica si la línea es un número
@@ -209,11 +216,13 @@ public class DocumentsService {
                                     int numPages = Integer.parseInt(line.trim()); // Convertir el número
                                     respuestaConversion.setNumeroDePagina(numPages); // Asignar al DTO
                                 } catch (NumberFormatException e) {
-                                    System.err.println("Error al convertir el número de páginas: " + line);
+//                                    System.err.println("Error al convertir el número de páginas: " + line);
+                                    logger.error("Error en el script Python: " + line);  // Registra los errores
                                 }
                             }
                         }
                     } catch (IOException e) {
+                        logger.error("Error al leer la salida estándar del script. bufferedReader", e);
                         throw new RuntimeException("Error al leer la salida estándar del script.", e);
                     }
                 });
@@ -224,10 +233,12 @@ public class DocumentsService {
                             if (line.contains("%|") || line.contains("[00:")) {
                                 continue; // Ignorar barras de progreso
                             }
-                            System.err.println("Error del script: " + line);
+                            logger.error("Error en el script Python: " + line);  // Registra los errores
+//                            System.err.println("Error del script: " + line);
                             // Maneja los errores según sea necesario
                         }
                     } catch (IOException e) {
+                        logger.error("Error al leer la salida de error del script. bufferedError", e);
                         throw new RuntimeException("Error al leer la salida de error del script.", e);
                     }
                 });
@@ -239,15 +250,18 @@ public class DocumentsService {
                 CompletableFuture.allOf(outputFuture, errorFuture).join();
 
                 if (exitCode != 0) {
+                    logger.error("El script Python terminó con un error. Código de salida: " + exitCode);
                     throw new RuntimeException("Error al ejecutar el script de Python: ");
                 }
                 respuestaConversion.setExitoConversionPython(true);
 
             } catch (IOException | InterruptedException e) {
+                logger.error("Error al ejecutar el script Python", e);
                 throw new RuntimeException("Error al ejecutar el script de Python.", e);
             } finally {
                 // Eliminar el archivo temporal si fue creado
                 if (tempFile.exists() && tempFile != null && !tempFile.delete()) {
+                    logger.error("error al borrar archivo temporal");
                     System.out.println("error al borrar archivo temporal");
                 } else {
                     System.out.println("Archivo temporal eliminado exitosamente.");
