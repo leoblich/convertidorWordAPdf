@@ -45,9 +45,10 @@ public class DocumentsController {
         if (file.isEmpty()) {
             return ResponseEntity.badRequest().body("El archivo está vacío.");
         }
-
+// "/src/main/resources/conversorLibreOffice"
         try {
             // Llamar al servicio para guardar el documento
+//            documentsService.guardarDocument(file, new File("C:\\PROYECTO_PERCY\\pruebaparadeployar\\convertidor\\src\\main\\resources\\conversorLibreOffice.py"));
             documentsService.guardarDocument(file, new File(scriptPath));
             return ResponseEntity.ok("Documento guardado exitosamente.");
         } catch (Exception e) {

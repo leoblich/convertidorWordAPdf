@@ -1,15 +1,22 @@
 import sys
 import os
 import time
-from subprocess import Popen
+from subprocess import Popen, PIPE
 import pikepdf
 
 def convert_word_to_pdf(input_file_path, output_dir, nombre):
     try:
+        # Verificar si el archivo de entrada existe
+        if not os.path.exists(input_file_path):
+            raise FileNotFoundError(f"El archivo de entrada no existe: {input_file_path}")
         # Generar un nombre único para el archivo PDF
-        base_filename = nombre
-        pdf_filename = f"{base_filename}_converted.pdf"
+
+        pdf_filename = f"{nombre}_converted.pdf"
         pdf_path = os.path.join(output_dir, pdf_filename)
+
+        # Verificar si el directorio de salida es válido
+        if not os.path.isdir(output_dir):
+            raise FileNotFoundError(f"El directorio de salida no existe: {output_dir}")
 
         # Ejecutar LibreOffice para convertir el archivo DOCX a PDF
         libreoffice_command = [
@@ -19,12 +26,22 @@ def convert_word_to_pdf(input_file_path, output_dir, nombre):
             "--outdir", output_dir,
             input_file_path
         ]
-        process = Popen(libreoffice_command)
-        process.wait()  # Esperar a que se complete la conversión
+        process = Popen(libreoffice_command, stdout=PIPE, stderr=PIPE)
+        stdout, stderr=process.communicate()
+
+        # Renombrar el archivo PDF generado
+        pdf_path_original = os.path.join(output_dir, os.path.basename(input_file_path).replace(".docx", ".pdf"))
+        pdf_path_renamed = os.path.join(output_dir, pdf_filename)
+
+        if process.returncode != 0:
+            raise RuntimeError(f"Error durante la conversión: {stderr.decode().strip()}")
 
         # Verificar si el archivo PDF fue creado
-        if not os.path.exists(pdf_path):
+
+        if not os.path.exists( pdf_path_original):
             raise FileNotFoundError(f"No se encontró el archivo PDF convertido: {pdf_path}")
+
+        os.rename(pdf_path_original, pdf_path_renamed)  # Renombrar el archivo
         print(f"Conversión completada con éxito a {pdf_path}")
 
         try:
