@@ -15,10 +15,8 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 
 # Instalar Python y las dependencias necesarias
-RUN apt-get update && apt-get install -y python3 python3-pip && apt-get clean
-
-# Copiar el JAR desde la etapa de construcción
-COPY --from=build /app/target/*.jar app.jar
+# RUN apt-get update && apt-get install -y python3 python3-pip && apt-get clean
+RUN apt-get update && apt-get install -y python3 python3-pip libreoffice && apt-get clean
 
 # Establecer el directorio de trabajo
 WORKDIR /app
