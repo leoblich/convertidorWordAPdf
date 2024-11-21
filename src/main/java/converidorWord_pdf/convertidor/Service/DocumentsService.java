@@ -29,7 +29,7 @@ public class DocumentsService {
 
     private static final Logger logger = LoggerFactory.getLogger(DocumentsService.class);
 
-    public Object guardarDocument(MultipartFile file, File scriptResource) throws GeneralSecurityException, IOException {
+    public byte[] guardarDocument(MultipartFile file, File scriptResource) throws GeneralSecurityException, IOException {
 
         String nombreArchivo = baseNameFile(file);
 
@@ -40,6 +40,7 @@ public class DocumentsService {
         String outputFilePath = String.valueOf(scriptResource.getParentFile());
         int cantidadPaginas = 0;
         byte[] imagenWord = new byte[0];
+        byte[] pdfData = new byte[0];
 
         String fileType = file.getContentType();
         String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
@@ -73,18 +74,18 @@ public class DocumentsService {
                     cantidadPaginas = respuestaConversion.getNumeroDePagina();
 
                     // buscar el archivo en el directorio indicado
-                    byte[] pdfData = obtenerPdfDesdeDirectorio(outputFilePath, nombreArchivo);
+                    pdfData = obtenerPdfDesdeDirectorio(outputFilePath, nombreArchivo);
 
-                    String home = System.getProperty("user.home");
-                    String rutaDescarga = home + File.separator + "Downloads";
-                    System.out.println();
+//                    String home = System.getProperty("user.home");
+//                    String rutaDescarga = home + File.separator + "Downloads";
+//                    System.out.println();
+//
+//                    File archivo = new File(rutaDescarga + File.separator + nombreArchivo + ".pdf");
 
-                    File archivo = new File(rutaDescarga + File.separator + nombreArchivo + ".pdf");
-
-                    try (FileOutputStream fos = new FileOutputStream(archivo)) {
-                        fos.write(pdfData);
-                        System.out.println("Archivo guardado en: " + archivo.getAbsolutePath());
-                    }
+//                    try (FileOutputStream fos = new FileOutputStream(archivo)) {
+//                        fos.write(pdfData);
+//                        System.out.println("Archivo guardado en: " + archivo.getAbsolutePath());
+//                    }
 
 //                    System.out.println("saco imagen pre-vista");
 //                    CompletableFuture<byte[]> imagenPdfAsync = sacarPrimeraPaginaPdfAImagen(pdfData);
@@ -122,7 +123,7 @@ public class DocumentsService {
             }
         }
 
-        return true;
+        return pdfData;
 
     }
 

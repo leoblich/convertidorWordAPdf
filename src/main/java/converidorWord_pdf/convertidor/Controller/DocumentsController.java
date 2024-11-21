@@ -6,14 +6,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.*;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 
 @RestController
@@ -36,21 +37,40 @@ public class DocumentsController {
 
     // guardado de un documento
     @PostMapping("/document")
-    public ResponseEntity<String> postDocument(@RequestParam("file") MultipartFile file) throws GeneralSecurityException, IOException {
+    public ResponseEntity<Object> postDocument(@RequestParam("file") MultipartFile file) throws GeneralSecurityException, IOException {
         if (scriptPath == null || scriptPath.isEmpty()) {
             throw new IllegalStateException("La propiedad 'script.path' no está configurada.");
         }
 
         // Verificar que el archivo no esté vacío
         if (file.isEmpty()) {
-            return ResponseEntity.badRequest().body("El archivo está vacío.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al convertir el archivo a PDF.");
         }
 // "/src/main/resources/conversorLibreOffice"
         try {
             // Llamar al servicio para guardar el documento
 //            documentsService.guardarDocument(file, new File("C:\\PROYECTO_PERCY\\pruebaparadeployar\\convertidor\\src\\main\\resources\\conversorLibreOffice.py"));
-            documentsService.guardarDocument(file, new File(scriptPath));
-            return ResponseEntity.ok("Documento guardado exitosamente.");
+            byte[] respuesta = documentsService.guardarDocument(file, new File(scriptPath));
+
+            String fileName = file.getOriginalFilename();
+            System.out.println("********" + fileName);
+
+            HttpHeaders headers = new HttpHeaders();
+
+            headers.setContentType(MediaType.APPLICATION_PDF);
+            // Construir la cabecera Content-Disposition
+            ContentDisposition contentDisposition = ContentDisposition.builder("attachment")
+//            ContentDisposition contentDisposition = ContentDisposition.builder("inline")
+                    .filename(fileName)
+                    .build();
+            headers.set(HttpHeaders.CONTENT_DISPOSITION, contentDisposition.toString());
+
+            // Crear la respuesta
+            return ResponseEntity.ok()
+                    .headers(headers) // Usa el objeto HttpHeaders completo
+                    .body(respuesta); // Envía el contenido del archivo como cuerpo
+
         } catch (Exception e) {
             e.printStackTrace(); // Registrar cualquier excepción en los logs
             return ResponseEntity.status(500).body("Ocurrió un error al guardar el documento: " + e.getMessage());
