@@ -201,7 +201,7 @@ logger.info("entrando a llamado al script ");
 
             try {
                 // Llama al script de Python para convertir el archivo
-                ProcessBuilder processBuilder = new ProcessBuilder("python3", scriptPath, tempFile.getAbsolutePath(), outputFilePath, baseName);
+                ProcessBuilder processBuilder = new ProcessBuilder("python", scriptPath, tempFile.getAbsolutePath(), outputFilePath, baseName);
                 Process process = processBuilder.start();
 
                 CompletableFuture<Void> outputFuture = CompletableFuture.runAsync(() -> {
